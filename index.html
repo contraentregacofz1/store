@@ -376,29 +376,32 @@
         function renderProducts(productsToShow = products) {
             const container = document.getElementById('productsContainer');
             container.innerHTML = productsToShow.map(product => `
-                <div class="col-md-4 col-lg-3">
-                    <div class="card product-card h-100">
-                        ${product.onSale ? '<span class="badge bg-danger badge-sale">SALE</span>' : ''}
-                        <img src="${product.video}" class="card-img-top p-3" alt="${product.name}">
-                        <div class="card-body">
-                            <h5 class="card-title">${product.name}</h5>
-                            <p class="card-text text-muted small">${product.description}</p>
-                            <p class="fw-bold">$${product.price.toLocaleString()}</p>
-                            <div class="quantity-controls">
-                                <button class="btn btn-sm btn-outline-secondary" onclick="adjustQuantity(${product.id}, -1)">-</button>
-                                <span id="quantity-${product.id}">${cart[product.id] || 0}</span>
-                                <button class="btn btn-sm btn-outline-secondary" onclick="adjustQuantity(${product.id}, 1)">+</button>
-                            </div>
-                            <span class="badge bg-secondary inventory-badge mt-2">Disponibles: ${product.inventory}</span>
-                        </div>
-                        <div class="card-footer bg-transparent">
-                            <button class="btn btn-sm btn-dark w-100" onclick="addToCart(${product.id})">
-                                Añadir al carrito
-                            </button>
-                        </div>
-                    </div>
+    <div class="col-md-4 col-lg-3">
+        <div class="card product-card h-100">
+            ${product.onSale ? '<span class="badge bg-danger badge-sale">SALE</span>' : ''}
+            <iframe width="100%" height="200" src="${product.video}" 
+                title="${product.name}" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen></iframe>
+            <div class="card-body">
+                <h5 class="card-title">${product.name}</h5>
+                <p class="card-text text-muted small">${product.description}</p>
+                <p class="fw-bold">$${product.price.toLocaleString()}</p>
+                <div class="quantity-controls">
+                    <button class="btn btn-sm btn-outline-secondary" onclick="adjustQuantity(${product.id}, -1)">-</button>
+                    <span id="quantity-${product.id}">${cart[product.id] || 0}</span>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="adjustQuantity(${product.id}, 1)">+</button>
                 </div>
-            `).join('');
+                <span class="badge bg-secondary inventory-badge mt-2">Disponibles: ${product.inventory}</span>
+            </div>
+            <div class="card-footer bg-transparent">
+                <button class="btn btn-sm btn-dark w-100" onclick="addToCart(${product.id})">
+                    Añadir al carrito
+                </button>
+            </div>
+        </div>
+    </div>
+`).join('');
         }
 
         // Funciones del carrito
