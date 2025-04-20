@@ -303,7 +303,7 @@
                 name: "1",
                 price: 120000,
                 inventory: 15,
-                image: "1/1.jpg",
+                video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
                 description: "Producto de alta calidad con garantía de 1 año.",
                 onSale: true
             },
@@ -312,7 +312,7 @@
                 name: "Producto Estándar",
                 price: 80000,
                 inventory: 30,
-                image: "https://via.placeholder.com/300",
+                video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
                 description: "Producto confiable para uso diario.",
                 onSale: false
             },
@@ -321,7 +321,7 @@
                 name: "Producto Económico",
                 price: 50000,
                 inventory: 50,
-                image: "https://via.placeholder.com/300",
+                video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
                 description: "Solución económica sin perder calidad.",
                 onSale: true
             },
@@ -330,7 +330,7 @@
                 name: "Producto Deluxe",
                 price: 150000,
                 inventory: 10,
-                image: "https://via.placeholder.com/300",
+                video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
                 description: "Edición especial con características exclusivas.",
                 onSale: false
             }
@@ -379,7 +379,7 @@
                 <div class="col-md-4 col-lg-3">
                     <div class="card product-card h-100">
                         ${product.onSale ? '<span class="badge bg-danger badge-sale">SALE</span>' : ''}
-                        <img src="${product.image}" class="card-img-top p-3" alt="${product.name}">
+                        <img src="${product.video}" class="card-img-top p-3" alt="${product.name}">
                         <div class="card-body">
                             <h5 class="card-title">${product.name}</h5>
                             <p class="card-text text-muted small">${product.description}</p>
